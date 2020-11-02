@@ -1,0 +1,15 @@
+{% extends "layout.html" %} <!-- included layout html file which has common header content -->
+{% block content %} <!--- content is the name of the block  which is defined in layout html-->
+<!-- posts is coming from flaskbolg.py file as param to the route decorator -->
+<div class="content-section">
+    <div class="media">
+        <img class="rounded-circle account-img" src="{{ url_for('static', filename='images/' + user.image_file) }}">
+        <div class="media-body">
+          <h2 class="account-heading"> My username is {{user.username}}</h2>
+          <p class="text-secondary"> My email is {{current_user.email}}</p>
+          <p class="text-secondary"> I have posted total of {{post_count }} posts,</p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
